@@ -163,10 +163,11 @@ nav {
   justify-content: center;
   flex-direction: column;
   margin: auto;
+  width: 70vw;
 }
 #middle-section {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 5vh;
   margin-bottom: 5vh;
 }
@@ -178,11 +179,11 @@ nav {
   width: 80%;
 }
 .content-square {
-  width: 20vw;
-  height: 20vw;
   background-color: dimgray;
   font-size: 5rem;
   overflow: scroll;
+  width: 30%;
+  height: 30%;
 }
 #about-box {
   width: 80%;
