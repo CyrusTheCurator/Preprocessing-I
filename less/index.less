@@ -373,7 +373,7 @@ h1 {
   }
 
   to {
-    margin-top: 5%;
+    margin-top: 15%;
   }
 }
 .overlay-format {
@@ -391,40 +391,42 @@ h1 {
   opacity: 0;
   margin: auto;
   width: 80%;
+  height: fit-content;
   overflow-y: auto;
-  margin-top: 5%;
+  margin-top: 15%;
+  overflow: scroll;
 }
-
 .image-animation-container:hover .overlay-content {
   animation-name: slidey-content;
-  animation-duration: 1s;
+  animation-duration: 2s;
   opacity: 0.9;
-  transition: 0.7s ease;
+  transition: 0.1s ease;
 }
 
 .image-animation-container:hover .wow-text {
   opacity: 1;
-  transition: 1s ease;
+  transition: 5s ease;
 }
 .image-animation-container:hover .wow-text p {
-  transition: 2s ease;
-  font-size: 33px;
+  transition: 3s ease;
+  font-size: 3rem;
 }
 
 .wow-text {
   opacity: 0;
   color: white;
-  height: 70%;
-  width: 50%;
   border-radius: 10px;
   opacity: 0;
-  left: 5%;
-  bottom: 10%;
+  left: 2%;
+  bottom: 57%;
   padding: 10px;
   overflow-y: auto;
-  font-size: 40px;
+  font-size: 2.5rem;
   position: absolute;
   word-wrap: break-word;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 2rem;
+  margin: 0px 0px 0px 0px;
 }
 
 .animation-wrapper {
