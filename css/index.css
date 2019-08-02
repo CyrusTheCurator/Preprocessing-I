@@ -182,6 +182,10 @@ pre {
   font-weight: 400;
   line-height: 18.5714px;
 }
+ul {
+  list-style-type: circle;
+  margin-left: 2rem;
+}
 .container {
   width: 80vw;
   margin: auto;
@@ -273,13 +277,15 @@ nav a:hover {
   width: 30%;
   margin: 0 1vw;
   flex-shrink: 0;
-  flex-wrap: nowrap;
-  white-space: nowrap;
+  opacity: 0.5;
 }
 .content-square:hover {
   flex: 20;
-  color: red;
+  opacity: 1;
   transition: 0.5s ease-in-out;
+}
+.content-square:hover p {
+  color: lightcyan;
 }
 .content-square:before {
   content: attr(data-order);
@@ -307,6 +313,8 @@ nav a:hover {
   background: rgba(0, 0, 0, 0.8);
   border: lightslategray 5px solid;
   border-radius: 2rem;
+  display: flex;
+  justify-content: center;
 }
 .dark-content-container {
   background: rgba(0, 0, 0, 0.6);
@@ -425,10 +433,11 @@ h1 {
   width: 80%;
   height: fit-content;
   overflow-y: auto;
+  border-radius: 2rem;
 }
 .overlay-content p {
-  font-size: 1.6rem;
-  line-height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
   padding: 1rem;
 }
 .image-animation-container:hover .overlay-content {
@@ -436,6 +445,10 @@ h1 {
   animation-duration: 2s;
   opacity: 0.9;
   transition: 0.1s ease;
+}
+.animation-wrapper:hover ~ .intro-text {
+  opacity: 0.2;
+  transition: 0.8s ease-in-out;
 }
 .image-animation-container:hover .top-section h1 {
   opacity: 0.1;
@@ -450,7 +463,8 @@ h1 {
   font-size: 3rem;
 }
 .textbox {
-  width: 60vw;
+  margin-top: 1rem;
+  width: 40vw;
 }
 .wow-text {
   color: white;
