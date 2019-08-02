@@ -114,6 +114,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: black;
 }
 ol,
 ul {
@@ -149,6 +150,51 @@ body {
 html {
 }
 
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+}
+h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+blockquote {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+pre {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+}
+
+ul {
+  list-style-type: circle;
+  margin-left: 2rem;
+}
 .container {
   width: 80vw;
   margin: auto;
@@ -239,15 +285,55 @@ nav a:hover {
 }
 
 .content-square {
-  font-size: 5rem;
   overflow: hidden;
-  width: 20vw;
   height: 20vw;
   color: white;
   background: rgba(0, 0, 0, 0.8);
   border: lightslategray 5px solid;
   border-radius: 2rem;
   padding: 5px;
+  flex: 1;
+  position: relative;
+  width: 30%;
+  margin: 0 1vw;
+  flex-shrink: 0;
+  opacity: 0.5;
+  line-height: 2rem;
+  display: flex;
+  flex-flow: column;
+
+  &:hover {
+    flex: 20;
+    opacity: 1;
+    & p {
+      color: lightcyan;
+    }
+    transition: 0.5s ease-in-out;
+  }
+
+  &:before {
+    content: attr(data-order);
+    top: 50%;
+    left: 50%;
+    color: white;
+    transition: ease-in-out;
+    flex-shrink: 3;
+  }
+}
+.content-square h1 {
+  font-size: 3rem;
+  line-height: 7rem;
+  border-bottom: solid white 2px;
+}
+
+.content-square p {
+  font-size: 1.2rem;
+}
+
+#arrow-contact {
+  width: 15vw;
+  height: auto;
+  margin: -12.5rem 0px 0px 24rem;
 }
 
 #about-box {
@@ -258,9 +344,10 @@ nav a:hover {
   overflow: hidden;
   color: white;
   background: rgba(0, 0, 0, 0.8);
-  background: rgba(0, 0, 0, 0.8);
   border: lightslategray 5px solid;
   border-radius: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .dark-content-container {
@@ -370,22 +457,24 @@ h1 {
 
 @keyframes slidey-content {
   from {
-    margin-top: 26%;
+    bottom: -100%;
   }
 
   to {
-    margin-top: 15%;
+    bottom: 0%;
   }
 }
 .overlay-format {
-  bottom: 0;
   position: absolute;
   overflow: hidden;
   width: 100%;
   height: 100%;
+  bottom: 0;
 }
 
 .overlay-content {
+  position: absolute;
+  bottom: 0%;
   overflow: hidden;
   display: flex;
   background-color: black;
@@ -394,8 +483,12 @@ h1 {
   width: 80%;
   height: fit-content;
   overflow-y: auto;
-  margin-top: 15%;
-  overflow: scroll;
+  border-radius: 2rem;
+  & p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding: 1rem;
+  }
 }
 .image-animation-container:hover .overlay-content {
   animation-name: slidey-content;
@@ -404,6 +497,15 @@ h1 {
   transition: 0.1s ease;
 }
 
+.animation-wrapper:hover ~ .intro-text {
+  opacity: 0.2;
+  transition: 0.8s ease-in-out;
+}
+
+.image-animation-container:hover .top-section h1 {
+  opacity: 0.1;
+  transition: 0.1s ease;
+}
 .image-animation-container:hover .wow-text {
   opacity: 1;
   transition: 5s ease;
@@ -413,6 +515,11 @@ h1 {
   font-size: 3rem;
 }
 
+.textbox {
+  margin-top: 1rem;
+  width: 40vw;
+}
+
 .wow-text {
   opacity: 0;
   color: white;
@@ -420,7 +527,7 @@ h1 {
   opacity: 0;
   left: 2%;
   bottom: 57%;
-  padding: 10px;
+  padding: 1rem;
   overflow-y: auto;
   font-size: 2.5rem;
   position: absolute;
