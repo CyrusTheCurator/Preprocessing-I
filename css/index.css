@@ -279,6 +279,8 @@ nav a:hover {
   flex-shrink: 0;
   opacity: 0.5;
   line-height: 2rem;
+  display: flex;
+  flex-flow: column;
 }
 .content-square:hover {
   flex: 20;
@@ -303,6 +305,11 @@ nav a:hover {
 }
 .content-square p {
   font-size: 1.2rem;
+}
+#arrow-contact {
+  width: 15vw;
+  height: auto;
+  margin: -12.5rem 0px 0px 24rem;
 }
 #about-box {
   width: 80%;
