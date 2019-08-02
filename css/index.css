@@ -273,6 +273,8 @@ nav a:hover {
   width: 30%;
   margin: 0 1vw;
   flex-shrink: 0;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 .content-square:hover {
   flex: 20;
@@ -287,9 +289,13 @@ nav a:hover {
   transition: ease-in-out;
   flex-shrink: 3;
 }
+.content-square h1 {
+  font-size: 3rem;
+  line-height: 7rem;
+  border-bottom: solid white 2px;
+}
 .content-square p {
-  font-size: 5rem;
-  line-height: 10rem;
+  font-size: 1.2rem;
 }
 #about-box {
   width: 80%;
@@ -395,10 +401,10 @@ h1 {
 }
 @keyframes slidey-content {
   from {
-    margin-top: 26%;
+    bottom: -100%;
   }
   to {
-    margin-top: 15%;
+    bottom: 0%;
   }
 }
 .overlay-format {
@@ -409,6 +415,8 @@ h1 {
   bottom: 0;
 }
 .overlay-content {
+  position: absolute;
+  bottom: 0%;
   overflow: hidden;
   display: flex;
   background-color: black;
@@ -417,8 +425,11 @@ h1 {
   width: 80%;
   height: fit-content;
   overflow-y: auto;
-  margin-top: 15%;
-  overflow: scroll;
+}
+.overlay-content p {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  padding: 1rem;
 }
 .image-animation-container:hover .overlay-content {
   animation-name: slidey-content;
@@ -437,6 +448,9 @@ h1 {
 .image-animation-container:hover .wow-text p {
   transition: 3s ease;
   font-size: 3rem;
+}
+.textbox {
+  width: 60vw;
 }
 .wow-text {
   color: white;
